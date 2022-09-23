@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <title>COTIZADOR DE SEGUROS</title>
+</head>
+<body>
+    <H1>COTIZADOR DE SEGUROS</H1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <form id="formulario" class="p-3 mt-5 shadow border">
+                    <h2 class="text-center text-primary">Bienvenido/a a Seguros Kagler</h2>
+
+                <input id="nombre" class="form-control my-2" type="text" placeholder="ingresa tu nombre y apellido">
+
+                <input id="telefono" class="form-control my-2" type="number" placeholder="telefono">
+
+                <input id="email" class="form-control my-2" type="email" placeholder="ingresa tu direccion de mail">
+
+                <button class="btn btn-primary mt-2" type="submit">Click</button>
+                
+                </form>
+                <hr>
+
+                <h3 id="respuesta" class="text-center fw-light">
+                    
+                </h3>
+            </div>
+        </div>
+    </div>
+    <form>
+    <h3>Marca del vehiculo</h3>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id = "marca">
+        <option selected>Selecciona la marca de tu auto</option>
+        <option value="1000">Ford</option>
+        <option value="1000">Renault</option>
+        <option value="1000">Fiat</option>
+        <option value="1000">Ford</option>
+        <option value="1000">Renault</option>
+        <option value="1000">Fiat</option>
+    </select>
+    <h3>Modelo del vehiculo</h3>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id = "modelo">
+        <option selected>Selecciona el modelo</option>
+        <option value="100">Focus</option>
+        <option value="100">Sandero</option>
+        <option value="100">Argo</option>
+        <option value="100">Focus</option>
+        <option value="100">Sandero</option>
+        <option value="100">Argo</option>
+    </select>
+    <h3>Año de Patentamineto</h3>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id = "año">
+        <option selected>Selecciona el año</option>
+        <option value="120000">2022</option>
+        <option value="110000">2021</option>
+        <option value="100000">2020</option>
+        <option value="90000">2019</option>
+        <option value="80000">2018</option>
+        <option value="70000">2019</option>
+    </select>
+    
+    <button type="button" id="button" class="btn btn-danger" value="Calcular Presupuesto">CALCULAR</button>
+    <p class="total"><input type="button" id="resultado"></p>
+</form>
+
+
+    
+    
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

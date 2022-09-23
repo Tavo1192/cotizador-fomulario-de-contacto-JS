@@ -1,0 +1,23 @@
+body {
+    background-color: aqua;
+}
+
+form {
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form button {
+    margin: 10px;
+}
+form h3 {
+    color: rgb(138, 161, 231); 
+}
+h1 {
+    text-align: center;
+    padding: 0.5rem;
+    color: rgb(138, 161, 231);
+    
+}
