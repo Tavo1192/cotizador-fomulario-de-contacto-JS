@@ -25,11 +25,12 @@
         localStorage.setItem("telefono", telefono);
         localStorage.setItem("email", email);
         /*--------------recupero datos al localStorage desde formulario---------*/
-        const nombreLocalStorage = localStorage.getItem("nombre");
-        const telefonoLocalStorage = localStorage.getItem("telefono");
-        const emailLocalStorage = localStorage.getItem("email");
+        let nombreStorage = localStorage.getItem("nombre");
+        let telefonoStorage = localStorage.getItem("telefono");
+        let emailStorage = localStorage.getItem("email");
 
-       console.log(nombreLocalStorage, telefonoLocalStorage, emailLocalStorage );
+       console.log(nombreStorage, telefonoStorage, emailStorage );
+       
         
 
 };
@@ -64,7 +65,6 @@
 
                 if (suma === null){
                         suma = [];
-                        
                 }
         alert("tu cotizacion actual es "+ "" + suma); 
               
@@ -75,25 +75,14 @@
         obtenerLocalstorage();
 
         function obtenerLocalstorage(){
-            let resultado = localStorage.getItem("resultado");
+            let resultado =  localStorage.getItem("resultado");
             if (localStorage.getItem("resultado")) {
                 let resultado = localStorage.getItem("resultado");
 
                 console.log(resultado)
-            }else {
-                console.log("no hay ingreso");
-            };
+            }
            
         }
-
-            
-        
-    
-    
-    
-
-
-
 
 // /*---------aca voy a colocar un carrito----------*/
 //----------- esta en proceso -----todavia no funciona
