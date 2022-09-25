@@ -97,40 +97,67 @@ class Seguros{
        
     }
 }
-const seguro = [];
-seguro.push(new Seguros(1,'SEGURO AUTOMOTOR BASE', "codigo 3948",'San Cristobal'));
-seguro.push(new Seguros(2,'SEGURO AUTOMOTOR MEDIUM', "codigo 4032",'La Caja '));
-seguro.push(new Seguros(3,'SEGURO AUTOMOTOR PREMIUM',"codigo 4235",'La Segunda'));
+// const seguro = [];
+// seguro.push(new Seguros(1,'SEGURO AUTOMOTOR BASE', "codigo 3948",'San Cristobal'));
+// seguro.push(new Seguros(2,'SEGURO AUTOMOTOR MEDIUM', "codigo 4032",'La Caja '));
+// seguro.push(new Seguros(3,'SEGURO AUTOMOTOR PREMIUM',"codigo 4235",'La Segunda'));
 
 
-for (let Seguros of seguro) {
-    let div = document.createElement("div");
-    div.innerHTML = `<form id = "FormularioSeguro">
-                    <h3>${Seguros.nombre}</h3>
-                    <p>${Seguros.broker} / ${Seguros.codigo}</p>
+// for (let Seguros of seguro) {
+//     let div = document.createElement("div");
+//     div.innerHTML = `<form id = "FormularioSeguro">
+//                     <h3>${Seguros.nombre}</h3>
+//                     <p>${Seguros.broker} / ${Seguros.codigo}</p>
                     
-                    <button id ='${Seguros.id}'class="btn btn-primary my-2 col-3">Contratar</button>
+//                     <button id ='${Seguros.id}'class="btn btn-primary my-2 col-3">Contratar</button>
                     
-                    <input class = "btn btn-dark py-2 bg-warnig my-2 col 1" type = reset value."borrar">
-                    <hr>
-                    </form>`;
+//                     <input class = "btn btn-dark py-2 bg-warnig my-2 col 1" type = reset value."borrar">
+//                     <hr>
+//                     </form>`;
+        
+//                     document.body.appendChild(div);
     
-    document.body.appendChild(div);
-}
-    
+// };
+const carritoContent = document.getElementById("carritoContent");
 
-// const containerDiv = document.querySelector("#containerDiv");
-// const carritoDiv   = document.querySelector("#carritoDiv");
+const productos = [
+    {
+        id : 1,
+        nombre: 'SEGURO AUTOMOTOR BASE',
+        precio: 70000,
+        img:" x ",
+        
+    },
+    {
+        id : 2,
+        nombre: 'SEGURO AUTOMOTOR MEDIUM',
+        precio: 80000,
+        img:" x ",
+        
+    },
+    {
+        id : 3,
+        nombre: 'SEGURO AUTOMOTOR PREMIUM',
+        precio: 90000,
+        img:" x ",
+        
+    },
 
-// function crearCards(){
-//     seguro.forEach(seg=>{
-//         containerDiv.innerHTML = `<div style="padding: 20px; background-color:orange;border
-//         <h4>${seg.nombre}</h4>
-//         <p>$${seg.codigo}</p>
-//         <button class="btnCarrito" id="btn-agregar${seg.id}">Agregar</button></div>`
-//         document.body.appendChild(containerDiv);
-//     })
-    
+];
+
+let carrito = [];
+
+productos.forEach((product)=> {
+    let content = document.createElement("div");
+    content.innerHTML = `
+    <img src="${product.img}">
+    <h3>${product.nombre}</h3>
+    <p>${product.precio} $</p>`;
+
+    carritoContent.append(carrito);
+
+});
+
 
 
 
