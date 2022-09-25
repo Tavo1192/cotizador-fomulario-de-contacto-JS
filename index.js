@@ -14,16 +14,20 @@ formulario.addEventListener( "submit", validarFormulario);
         const nombre = document.querySelector("#nombre").value
         const telefono = document.querySelector("#telefono").value
         const email = document.querySelector("#email").value
-        
-        const respuesta = document.getElementById("respuesta");
-        respuesta.textContent = `Hola ${nombre} por favor selecciona modelo y año de tu vehiculo, gracias por dejarnos tu numero ${telefono} y direcion de mail ${email}`
-        
+        const respuesta = document.getElementById("respuesta"). value;
+        /*----------*/
+        localStorage.setItem("nombre", nombre);
+        localStorage.setItem("telefono", telefono);
+        localStorage.setItem("email", email);
+        /*--------------*/
+        localStorage.getItem("nombre");
+        localStorage.getItem("telefono");
+        localStorage.getItem("email");
+     
 };
-        
-
-
+      
         respuesta.textContent = "por favor ingresa los datos de tu vehiculo"
-
+        
 
 /*--------------formulario datos vehiculo-------------------*/
 let boton = document.getElementById("button");
@@ -35,17 +39,45 @@ let boton = document.getElementById("button");
         let precio2 = parseInt(ele2.options[ele2.selectedIndex].value);
         let ele3 = document.getElementById("año");
         let precio3 = parseInt(ele3.options[ele3.selectedIndex].value);
+
         let suma = `Total $ ${precio1 + precio2 + precio3}`;
 
-document.getElementById("resultado").value = suma;
+        document.getElementById("resultado").value = suma;
 
 /*-----------ingresa al localStorage el resultado---------*/
 
-let resultado = localStorage.setItem("resultado", JSON.stringify(suma));
-        if(suma === null){
-            suma = [];
+        localStorage.setItem("resultado", JSON.stringify(suma));
+
+        console.log(suma);
+
+                if (suma === null){
+                        suma = [];
+                        
+                }
+        alert("tu ultima cotizacion fue"+ "" + suma);        
         }
-}
+
+/*-----------ingresa al localStorage el resultado---------*/
+
+         resultado = localStorage.getItem("resultado");
+    
+
+
+
+
+
+// const resultado = localStorage.setItem("resultado",JSON.stringify(suma));
+
+// localStorage.getItem("resultado", resultado);
+// console.log(suma);
+
+//         if (suma === null){
+//                 suma = [];
+                
+//         }
+// alert("tu ultima cotizacion fue" + resultado);        
+// }
+
 
 
 
@@ -68,17 +100,28 @@ seguro.push(new Seguros(2,'SEGURO AUTOMOTOR MEDIUM', "codigo 4032",'La Caja '));
 seguro.push(new Seguros(3,'SEGURO AUTOMOTOR PREMIUM',"codigo 4235",'La Segunda'));
 
 
-for (const Seguros of seguro) {
+for (let Seguros of seguro) {
     let div = document.createElement("div");
-    div.innerHTML = `<h3>${Seguros.nombre}</h3>
+    div.innerHTML = `<form id = "FormularioSeguro">
+                    <h3>${Seguros.nombre}</h3>
                     <p>${Seguros.broker} / ${Seguros.codigo}</p>
-                    <button id='${Seguros.id}'class="btn btn-primary my-2 col-2">Contratar</button>
-                    <button id class= "btn btn-dark py-2 bg-warnig">borrar</button><hr>
-                    `;
+                    <button id ='${Seguros.id}'class="btn btn-primary my-2 col-3">Contratar</button>
+                    <input class = "btn btn-dark py-2 bg-warnig my-2 col 1" type = reset value."borrar">
+                    <hr>
+                    </form>`;
 
-                    document.body.appendChild(div);
+    document.body.appendChild(div);
 }
     
 
+const containerDiv = document.querySelector("#containerDiv");
+const carritoDiv   = document.querySelector("#carritoDiv");
 
-
+function crearCards(){
+    seguro.forEach(seg=>{
+        containerDiv.innerHTML = `<div style="padding: 20px; background-color:orange;border
+        <h4>${seg.nombre}</h4>
+        <p>$${seg.codigo}</p>
+        <button class="btnCarrito" id="btn-agregar${seg.id}">Agregar</button></div>`
+    })}
+    
