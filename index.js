@@ -125,6 +125,7 @@ const productos = [
         id : 1,
         nombre: 'SEGURO AUTOMOTOR BASE',
         precio: 70000,
+        img:"img/seguroBase.jpeg",
        
         
     },
@@ -132,6 +133,7 @@ const productos = [
         id : 2,
         nombre: 'SEGURO AUTOMOTOR MEDIUM',
         precio: 80000,
+        img:"img/seguroMedium.jpeg",
        
         
     },
@@ -139,6 +141,7 @@ const productos = [
         id : 3,
         nombre: 'SEGURO AUTOMOTOR PREMIUM',
         precio: 90000,
+        img:`img/seguroPremiun.jpeg`, 
        
         
     },
@@ -152,9 +155,11 @@ let carrito = [];
     content.innerHTML = `
     
     <h3>${product.nombre}</h3>
-    <p>${product.precio} $</p>`;
+    <p>${product.precio} $</p>
+    <img src=${product.img}>`;
 
-    carritoContent.append(content);
+    carritoContent.appendChild(content);
+
 
 });
 
