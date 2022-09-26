@@ -67,8 +67,44 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-
-
+/*-----------------inicia cards-------*/
+.carrito-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card img {
+    width: cover;
+    height: cover;
+};
+.price {
+    color: grey;
+    font-size: 22px;
+}
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: rgb(238, 108, 108);
+    background-color: #1b1b1b;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+.card button:hover {
+    opacity: 0.7;
+}
 
 
 /*--------------------fomrulario---------*/
