@@ -152,13 +152,22 @@ let carrito = [];
 
     productos.forEach((product)=> {
     let content = document.createElement("div");
+    content.className = "card";
     content.innerHTML = `
-    
+    <img src=${product.img}>
     <h3>${product.nombre}</h3>
-    <p>${product.precio} $</p>
-    <img src=${product.img}>`;
+    <p class="price">${product.precio} $</p>
+  `;
 
-    carritoContent.appendChild(content);
+    carritoContent.append(content);
+
+    let comprar = document.createElement("button");
+    comprar.innerText = "comprar";
+    comprar.className = "comprar";
+
+    content.append(comprar);
+    
+   
 
 
 });

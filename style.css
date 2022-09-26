@@ -1,9 +1,80 @@
 body {
-    background-color: aqua;
+    margin: 0;
+    background-image: url("img/fotoBody.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  
+    
+    
+   
+    
+   }
+
+
+/*---navbar----*/
+.nav-container {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height:  12vh;
+    background-color: #1b1b1b;
+}
+.navbar-logo {
+    justify-self: start;
+    margin-left: 20px;
+    color: rgb(238, 108, 108);
+    margin-top: 0px;
+    cursor: pointer;
+}
+.ver-carrito {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
+/*-----------------imagen banner--------*/
+.banner {
+    background-size:  cover;
+    background-position: center;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1)), (rgba(0, 0, 0, 0.1));
+   
+}
+
+.banner-containner {
+    text-align: center;
+    padding: 15% 0;
+}
+.banner h1,h2 {
+    margin: 0;
+    color: rgb(138, 161, 231);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 62px;
+    font-weight: bold;
+    
+}
+.banner p {
+    font-size: 30px;
+    color: rgb(138, 161, 231);
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/*--------------------fomrulario---------*/
 form {
     margin: 0 auto; 
+    padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +86,7 @@ form button {
 form h3 {
     color: rgb(138, 161, 231); 
 }
-h1 {
+h2 {
     text-align: center;
     padding: 0.5rem;
     color: rgb(138, 161, 231);
