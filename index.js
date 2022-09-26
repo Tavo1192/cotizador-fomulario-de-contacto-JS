@@ -125,21 +125,21 @@ const productos = [
         id : 1,
         nombre: 'SEGURO AUTOMOTOR BASE',
         precio: 70000,
-        img:" x ",
+       
         
     },
     {
         id : 2,
         nombre: 'SEGURO AUTOMOTOR MEDIUM',
         precio: 80000,
-        img:" x ",
+       
         
     },
     {
         id : 3,
         nombre: 'SEGURO AUTOMOTOR PREMIUM',
         precio: 90000,
-        img:" x ",
+       
         
     },
 
@@ -147,14 +147,14 @@ const productos = [
 
 let carrito = [];
 
-productos.forEach((product)=> {
+    productos.forEach((product)=> {
     let content = document.createElement("div");
     content.innerHTML = `
-    <img src="${product.img}">
+    
     <h3>${product.nombre}</h3>
     <p>${product.precio} $</p>`;
 
-    carritoContent.append(carrito);
+    carritoContent.append(content);
 
 });
 
