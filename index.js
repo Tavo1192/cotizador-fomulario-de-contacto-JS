@@ -84,41 +84,8 @@
            
         }
 
-// /*---------aca voy a colocar un carrito----------*/
-//----------- esta en proceso -----todavia no funciona
+// /*---------inicia array carrito----------*/
 
-
-class Seguros{
-    constructor(id,nombre, codigo, broker){
-        this.id = id;
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.broker = broker;
-       
-    }
-}
-// const seguro = [];
-// seguro.push(new Seguros(1,'SEGURO AUTOMOTOR BASE', "codigo 3948",'San Cristobal'));
-// seguro.push(new Seguros(2,'SEGURO AUTOMOTOR MEDIUM', "codigo 4032",'La Caja '));
-// seguro.push(new Seguros(3,'SEGURO AUTOMOTOR PREMIUM',"codigo 4235",'La Segunda'));
-
-
-// for (let Seguros of seguro) {
-//     let div = document.createElement("div");
-//     div.innerHTML = `<form id = "FormularioSeguro">
-//                     <h3>${Seguros.nombre}</h3>
-//                     <p>${Seguros.broker} / ${Seguros.codigo}</p>
-                    
-//                     <button id ='${Seguros.id}'class="btn btn-primary my-2 col-3">Contratar</button>
-                    
-//                     <input class = "btn btn-dark py-2 bg-warnig my-2 col 1" type = reset value."borrar">
-//                     <hr>
-//                     </form>`;
-        
-//                     document.body.appendChild(div);
-    
-// };
-const carritoContent = document.getElementById("carritoContent");
 
 const productos = [
     {
@@ -148,6 +115,17 @@ const productos = [
 
 ];
 
+
+/*--------------comienza carrito app-------------------- */
+
+
+
+const carritoContent = document.getElementById("carritoContent");
+const verCarrito = document.getElementById("verCarrito");
+const modalContainer = document.getElementById("modal-container");
+
+
+
 let carrito = [];
 
     productos.forEach((product)=> {
@@ -166,12 +144,63 @@ let carrito = [];
     comprar.className = "comprar";
 
     content.append(comprar);
+
+    comprar.addEventListener("click", () =>{
+        carrito.push({
+            id: product.id,
+            img: product.img,
+            nombre: product.nombre,
+            precio: product.precio,
+
+        });
+        console.log(carrito)
+    });
     
-   
-
-
 });
 
+verCarrito.addEventListener("click", () => {
+    modalContainer.innerHTML = " ";
+    modalContainer.style.display = "block"
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modal-header";
+    modalHeader.innerHTML = `
+    <h1 class= modal-header-title>Carrito.</h1>
+    `;
+
+    modalContainer.append(modalHeader);
+
+   const modalbutton = document.createElement("h1");
+   modalbutton.innerText = "X";
+   modalbutton.className = "modal-header-button";
+
+   modalbutton.addEventListener("click", () => {
+        modalContainer.style.display = "none"
+   });    
+
+   modalHeader.append(modalbutton);
+
+
+   carrito.forEach((product)=>  {
+    let carritoContent = document.createElement("div");
+    carritoContent.className = "modal-content";
+    carritoContent.innerHTML =`
+            <img src="${product.img}">
+            <h3>${product.nombre}</h3>
+            <p>${product.precio} $</p>
+    
+    `;
+    modalContainer.append(carritoContent)
+
+   });
+
+   const total = carrito.reduce((acc, el) => acc + el.precio, 0)
+
+   const totalCompra = document.createElement("div");
+   totalCompra.className = "total-content";
+   totalCompra.innerHTML = `total a pagar: ${total}`;
+   modalContainer.append(totalCompra);
+  
+});
 
 
 

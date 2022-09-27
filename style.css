@@ -3,15 +3,10 @@ body {
     background-image: url("img/fotoBody.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
-  
-    
-    
-   
-    
-   }
-
+}
 
 /*---navbar----*/
+
 .nav-container {
     position: sticky;
     z-index: 3;
@@ -20,11 +15,11 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    height:  12vh;
+    height:  10vh;
     background-color: #1b1b1b;
 }
 .navbar-logo {
-    justify-self: start;
+    justify-self:start;
     margin-left: 20px;
     color: rgb(238, 108, 108);
     margin-top: 0px;
@@ -35,7 +30,7 @@ body {
     flex-direction: row-reverse;
     font-size: 25px;
     margin-top: 0px;
-    margin-right: 10px;
+    margin-right: 25px;
     cursor: pointer;
 }
 
@@ -52,7 +47,7 @@ body {
     text-align: center;
     padding: 15% 0;
 }
-.banner h1,h2 {
+.banner h1, h2 {
     margin: 0;
     color: rgb(138, 161, 231);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -60,28 +55,28 @@ body {
     font-weight: bold;
     
 }
-.banner p {
-    font-size: 30px;
-    color: rgb(138, 161, 231);
-    opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
 
 /*-----------------inicia cards-------*/
+
 .carrito-content {
+    
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+
 .card {
+    box-sizing: border-box;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 250px;
     margin: auto;
-    text-align: center;
+    text-align:center;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+   
 }
 .card img {
     width: cover;
@@ -128,3 +123,16 @@ h2 {
     color: rgb(138, 161, 231);
     
 }
+/*-----------inicia footer-------*/
+
+/* .footer {
+    
+font-size: 9px;
+min-height: 30em;
+background:  url(img/seguroHogar.jpeg);
+background-position: center center;
+background-size: cover;
+margin-bottom: 3.12em;
+display: flex;
+align-items: end;
+} */
