@@ -114,6 +114,37 @@ const productos = [
     },
 
 ];
+/*---------inicia OPERADOR AVANZADO spread----------*/
+/*---------concatena las cadenas de array que luego las muestro por consola */
+const productos2 = [
+    {
+        id : 4,
+        nombre: 'SEGURO FULL PARA TU HOGAR',
+        precio: 150000,
+        
+       
+        
+    },
+    {
+        id : 5,
+        nombre: 'SEGURO FULL PARA TU BICI',
+        precio: 70000,
+        
+       
+        
+    },
+
+];
+
+/*-----------con esta constate mezclo lso array----*/
+/*---------puedo seguir agregando productos/modificaciones desde el spread---*/
+
+const segurosVarios = {
+    ...productos,
+    ...productos2
+}
+console.log(segurosVarios)
+
 
 
 /*--------------comienza carrito app-------------------- */
