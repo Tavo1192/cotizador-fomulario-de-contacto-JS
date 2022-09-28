@@ -66,9 +66,8 @@
                 if (suma === null){
                         suma = [];
                 }
-        alert("tu cotizacion actual es "+ "" + suma); 
-              
-        }
+            };
+    
 
 /*-----------obtengo datos del formulario datos vehiculo desde localStorage  ---------*/
 
