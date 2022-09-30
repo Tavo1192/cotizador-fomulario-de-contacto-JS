@@ -44,7 +44,7 @@
         if (result.isConfirmed) {
           Swal.fire('Adelante!', '', 'success')
         } else if (result.isDenied) {
-          Swal.fire('Changes are not saved', '', 'info')
+          Swal.fire('Datos no guardados', '', 'info')
         }
       })
 
