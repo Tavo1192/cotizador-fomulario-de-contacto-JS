@@ -1,7 +1,6 @@
 
     const formulario = document.querySelector("#formulario");
    
-
 /*---------crear el evento--------------------*/
 
     formulario.addEventListener( "submit", validarFormulario);
@@ -249,6 +248,7 @@ verCarrito.addEventListener("click", () => {
    modalContainer.append(totalCompra);
   
 });
+
 
 
 
