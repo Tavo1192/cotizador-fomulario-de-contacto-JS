@@ -1,6 +1,6 @@
 
     const formulario = document.querySelector("#formulario");
-
+   
 
 /*---------crear el evento--------------------*/
 
@@ -30,8 +30,26 @@
         let emailStorage = localStorage.getItem("email");
 
        console.log(nombreStorage, telefonoStorage, emailStorage );
-       
-        
+
+
+/*-----------Agrego Libreria-----------*/
+
+       Swal.fire({
+        title: 'Vamos a continuar con la cotizacion?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Adelante',
+        denyButtonText: `No por el momento`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire('Adelante!', '', 'success')
+        } else if (result.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info')
+        }
+      })
+
+
 
 };
       
