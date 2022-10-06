@@ -253,8 +253,8 @@ const tabla = document.querySelector("#lista-autos tbody")
 function listaAutos(){
    fetch('lista.json')
    
-        .then(response => response.json())
-        .then(lista => {
+        .then((response) => response.json())
+        .then((lista) => {
             lista.forEach(lista => {
                 const row = document.createElement("tr");
                 row.innerHTML += `
