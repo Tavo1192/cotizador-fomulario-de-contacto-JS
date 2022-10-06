@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "marca": "Ford",
+        "modelo": "Ranger",
+        "version": ["Limited", 
+                    "Titanium", 
+                    "Viral", 
+                    "Ambiente"]
+        
+    },
+    {
+        "id": 2,
+        "marca": "Ford",
+        "modelo": "Focus III",
+        "version": ["SE", 
+                    "Titanium", 
+                    "Limeted", 
+                    "Ambiente"]
+        
+    },
+    {
+        "id": 3,
+        "marca": "Ford",
+        "modelo": "Fiesta Kinetic",
+        "version": ["Titanium", 
+                    "SE", 
+                    "S",
+                    "Trend"]
+        
+    },
+    {
+        "id": 4,
+        "marca": "Volskwagen",
+        "modelo": "Amarok",
+        "version": ["Dark Label", 
+                    "Extreme Black", 
+                    "Highline", 
+                    "Confortline"]
+        
+    },
+    {
+        "id": 5,
+        "marca": "Volskwagen",
+        "modelo": "Polo",
+        "version": ["GTS", 
+                    "Highline", 
+                    "Confortline", 
+                    "Trendline"]
+        
+    },
+    {
+        "id": 6,
+        "marca": "Volskwagen",
+        "modelo": "Gol Trend",
+        "version": ["Spoortline", 
+                    "Highline", 
+                    "Confortline", 
+                    "Trendline"]
+        
+    },
+    {
+        "id": 7,
+        "marca": "Renault",
+        "modelo": "Alaskan",
+        "version": ["Iconic", 
+                    "Confort", 
+                    "Intens", 
+                    "Emotion"]
+        
+    },
+    {
+        "id": 8,
+        "marca": "Renault",
+        "modelo": "Sandero",
+        "version": ["Life", 
+                    "Intense", 
+                    "Privilege", 
+                    "Expression"]
+        
+    },
+    {
+        "id": 9,
+        "marca": "Renault",
+        "modelo": "Capture",
+        "version": ["Intense", 
+                    "Life", 
+                    "Zen", 
+                    "Confort"]
+        
+    }
+]

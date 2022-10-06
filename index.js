@@ -15,7 +15,7 @@
         const email = document.querySelector("#email").value
 
         const respuesta = document.getElementById("respuesta");
-        respuesta.textContent = `Hola ${nombre} por favor selecciona modelo y año de tu vehiculo, gracias por dejarnos tu numero ${telefono} y direccion de email`
+        respuesta.innerText = `Hola ${nombre} por favor selecciona modelo y año de tu vehiculo, gracias por dejarnos tu numero ${telefono} y direccion de email`
 
 
 
@@ -47,9 +47,6 @@
           Swal.fire('Datos no guardados', '', 'info')
         }
       })
-
-
-
 };
       
         respuesta.textContent = "por favor ingresa los datos de tu vehiculo"
@@ -152,7 +149,7 @@ const productos2 = [
 
 ];
 
-/*-----------con esta constate mezclo lso array----*/
+/*-----------con esta constante mezclo los array----*/
 /*---------puedo seguir agregando productos/modificaciones desde el spread---*/
 
 const segurosVarios = {
@@ -249,12 +246,31 @@ verCarrito.addEventListener("click", () => {
   
 });
 
+// inicia llamado a json
 
+const tabla = document.querySelector("#lista-autos tbody")
 
+function listaAutos(){
+   fetch('lista.json')
+        .then(response => response.json())
+        .then(lista => {
+            lista.forEach(lista => {
+                const row = document.createElement("tr");
+                row.innerHTML += `
+                    <td>${lista.id}</td>
+                    <td>${lista.marca}</td>
+                    <td>${lista.modelo}</td>
+                    <td>${lista.version}</td>
+                `;
+                tabla.appendChild(row);
+                
+            });
+            
+        })
+        .catch(error => console.log('Hubo un error :' + error.message))
+};
 
-
-
-
+listaAutos();
 
 
 
