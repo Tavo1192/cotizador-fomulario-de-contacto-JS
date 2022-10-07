@@ -246,7 +246,7 @@ verCarrito.addEventListener("click", () => {
   
 });
 
-// inicia llamado a json
+// inicia llamado a json //funciona con live server
 
 const tabla = document.querySelector("#lista-autos tbody")
 
