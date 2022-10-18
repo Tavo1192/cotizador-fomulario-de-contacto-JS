@@ -208,17 +208,19 @@ verCarrito.addEventListener("click", () => {
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header";
     modalHeader.innerHTML = `
-    <h1 class= modal-header-title>Carrito.</h1>
+    <h1 class= modal-header-title>Carrito</h1>
     `;
 
     modalContainer.append(modalHeader);
 
-   const modalbutton = document.createElement("h1");
-   modalbutton.innerText = "X";
-   modalbutton.className = "modal-header-button";
+   const modalbutton = document.createElement("button");
+   modalbutton.innerText = "borrar";
+   modalbutton.classList.add("btn", "btn-danger");
 
    modalbutton.addEventListener("click", () => {
         modalContainer.style.display = "none"
+        
+
    });    
 
    modalHeader.append(modalbutton);
@@ -238,7 +240,7 @@ verCarrito.addEventListener("click", () => {
    });
 
    const total = carrito.reduce((acc, el) => acc + el.precio, 0)
-
+   
    const totalCompra = document.createElement("div");
    totalCompra.className = "total-content";
    totalCompra.innerHTML = `total a pagar: ${total}`;
@@ -250,28 +252,29 @@ verCarrito.addEventListener("click", () => {
 
 const tabla = document.querySelector("#lista-autos tbody")
 
-function listaAutos(){
-   fetch('lista.json')
-   
-        .then((response) => response.json())
-        .then((lista) => {
-            lista.forEach(lista => {
-                const row = document.createElement("tr");
-                row.innerHTML += `
-                    <td>${lista.id}</td>
-                    <td>${lista.marca}</td>
-                    <td>${lista.modelo}</td>
-                    <td>${lista.version}</td>
-                `;
-                tabla.appendChild(row);
+    function listaAutos(){
+       fetch('lista.json')
+       
+            .then((response) => response.json())
+            .then((lista) => {
+                lista.forEach(lista => {
+                    const row = document.createElement("tr");
+                    row.innerHTML += `
+                        <td>${lista.id}</td>
+                        <td>${lista.marca}</td>
+                        <td>${lista.modelo}</td>
+                        <td>${lista.version}</td>
+                    `;
+                    tabla.appendChild(row);
+                    
+                });
                 
-            });
-            
-        })
-        .catch(error => console.log('Hubo un error :' + error.message))
-};
+            })
+            .catch(error => console.log('Hubo un error :' + error.message))
+    };
+    
+    listaAutos();
 
-listaAutos();
 
 
 
