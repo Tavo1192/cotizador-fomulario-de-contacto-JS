@@ -145,22 +145,26 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
-    margin: 10px;
+    width: 90%;
+    margin: 25px;
+    
 }
 .modal-container > div > img {
     height: 120px;
     width: 120px;
 
 }
-/* .modal-container > div > p {
+.modal-container > div > p {
     color: #121212;
     text-align: center;
-} */
+   
+}
 
 .modal-container > div > h3 {
     color: #121212;
     text-align: center;
+    font-size: 3vh;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .total-content {
@@ -170,10 +174,27 @@ body {
     padding-top: 20px;
 }
 /*--- boton para borrar productos----*/
+
 .delete-product {
     cursor: pointer;
 }
+
+/*-----------contador en carrito-----------*/
+.cantidad-carrito {
+    background-color:  rgb(238, 108, 108);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+
 /*--------------------fomrulario---------*/
+
 form {
     margin: 0 auto; 
     padding: 50px;

@@ -106,6 +106,7 @@ const productos = [
         nombre: 'SEGURO AUTOMOTOR BASE',
         precio: 70000,
         img:"img/seguroBase.jpeg",
+        cantidad: 1, 
        
         
     },
@@ -114,6 +115,7 @@ const productos = [
         nombre: 'SEGURO AUTOMOTOR MEDIUM',
         precio: 80000,
         img:"img/seguroMedium.jpeg",
+        cantidad: 1,
        
         
     },
@@ -121,7 +123,8 @@ const productos = [
         id : 3,
         nombre: 'SEGURO AUTOMOTOR PREMIUM',
         precio: 90000,
-        img:`img/seguroPremiun.jpeg`, 
+        img:`img/seguroPremiun.jpeg`,
+        cantidad: 1, 
        
         
     },
@@ -134,6 +137,7 @@ const productos2 = [
         id : 4,
         nombre: 'SEGURO FULL PARA TU HOGAR',
         precio: 150000,
+        cantidad: 1, 
         
        
         
@@ -142,6 +146,7 @@ const productos2 = [
         id : 5,
         nombre: 'SEGURO FULL PARA TU BICI',
         precio: 70000,
+        cantidad: 1, 
         
        
         
@@ -167,6 +172,7 @@ console.log(segurosVarios)
 const carritoContent = document.getElementById("carritoContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 
 
@@ -178,7 +184,8 @@ let carrito = [];
     content.innerHTML = `
     <img src=${product.img}>
     <h3>${product.nombre}</h3>
-    <p class="price">${product.precio} $</p>
+    <p class="price">$${product.precio}</p>
+    
   `;
 
     carritoContent.append(content);
@@ -190,14 +197,30 @@ let carrito = [];
     content.append(comprar);
 
     comprar.addEventListener("click", () =>{
+
+    const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
+    
+    if (repeat){
+        carrito.map((prod) => {
+            if(prod.id === product.id){
+                prod.cantidad++
+            }
+
+        });
+        
+    }else {
+
         carrito.push({
             id: product.id,
             img: product.img,
             nombre: product.nombre,
             precio: product.precio,
+            cantidad: product.cantidad,
 
         });
-        console.log(carrito)
+    }
+        console.log(carrito);
+        carritoCounter();
     });
     
 });
@@ -232,10 +255,13 @@ const pintarCarrito = () => {
     carritoContent.innerHTML =`
             <img src="${product.img}">
             <h3>${product.nombre}</h3>
-            <p>${product.precio} $</p>
+            <p>$${product.precio}</p>
+            <p>Cantidad: ${product.cantidad}</p>
+            <p>Total: ${product.cantidad * product.precio}</p>
     
     `;
     modalContainer.append(carritoContent)
+    console.log(carrito.length);
 
     let eliminar = document.createElement("span");
     eliminar.innerText = "❌";
@@ -245,10 +271,8 @@ const pintarCarrito = () => {
     eliminar.addEventListener("click",eliminarProducto);
 
    });
-
-
-
-   const total = carrito.reduce((acc, el) => acc + el.precio, 0)
+   
+   const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
    
    const totalCompra = document.createElement("div");
    totalCompra.className = "total-content";
@@ -266,8 +290,14 @@ const eliminarProducto = () => {
         return carritoId !== foundId;
 
     });
-
+    carritoCounter();
     pintarCarrito();
+};
+
+const carritoCounter = () => {
+    cantidadCarrito.style.display = "block";
+    cantidadCarrito.innerText = carrito.length;
+
 };
 
 
