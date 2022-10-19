@@ -218,7 +218,6 @@ h2 {
 /*-----------inicia footer-------*/
 
 .footer {
-    
 font-size: 9px;
 min-height: 20em;
 background:  url(img/seguroHogar.jpeg);
@@ -227,4 +226,19 @@ background-size: cover;
 margin-bottom: 3.12em;
 display: flex;
 align-items: end;
+}
+.redes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+ .legales {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    
+    
 }
