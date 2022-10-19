@@ -8,21 +8,22 @@ body {
 .nav-container {
     position: sticky;
     z-index: 3;
-    top: 0;
+    top: 0; 
 }
 .navbar {
     display: flex;
     justify-content: space-between;
-    height:  5vh;
+    height: 12vh;
     background-color: #1b1b1b;
 }
 .navbar-logo {
-    /* justify-self:start; */
+    justify-self:start;
     margin-left: 30px;
     color: rgb(238, 108, 108);
-    margin-top: 30px;
+    margin-top: 3vh;
     cursor: pointer;
 }
+
 .ver-carrito {
     display: flex;
     flex-direction: row-reverse;
