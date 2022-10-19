@@ -201,8 +201,8 @@ let carrito = [];
     });
     
 });
-
-verCarrito.addEventListener("click", () => {
+const pintarCarrito = () => {
+// verCarrito.addEventListener("click", () => {
     modalContainer.innerHTML = " ";
     modalContainer.style.display = "block"
     const modalHeader = document.createElement("div");
@@ -237,16 +237,45 @@ verCarrito.addEventListener("click", () => {
     `;
     modalContainer.append(carritoContent)
 
+    let eliminar = document.createElement("span");
+    eliminar.innerText = "❌";
+    eliminar.className = "delete-product";
+    carritoContent.append(eliminar);
+
+    eliminar.addEventListener("click",eliminarProducto);
+
    });
+
+
 
    const total = carrito.reduce((acc, el) => acc + el.precio, 0)
    
    const totalCompra = document.createElement("div");
    totalCompra.className = "total-content";
-   totalCompra.innerHTML = `total a pagar: ${total}`;
+   totalCompra.innerHTML = `total a pagar: ${total} $`;
    modalContainer.append(totalCompra);
   
-});
+};
+
+verCarrito.addEventListener("click", pintarCarrito);
+
+const eliminarProducto = () => {
+    const foundId = carrito.find((element) => element.id);
+
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== foundId;
+
+    });
+
+    pintarCarrito();
+};
+
+
+
+
+
+
+
 
 // inicia llamado a json //funciona con live server
 

@@ -169,6 +169,10 @@ body {
     text-align: center;
     padding-top: 20px;
 }
+/*--- boton para borrar productos----*/
+.delete-product {
+    cursor: pointer;
+}
 /*--------------------fomrulario---------*/
 form {
     margin: 0 auto; 
