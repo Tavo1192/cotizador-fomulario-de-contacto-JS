@@ -309,31 +309,54 @@ const carritoCounter = () => {
 
 // inicia llamado a json //funciona con live server
 
-const tabla = document.querySelector("#lista-autos tbody")
+// const tabla = document.querySelector("#lista-autos tbody")
 
-    function listaAutos(){
-       fetch('lista.json')
+//     function listaAutos(){
+//        fetch('lista.json')
        
-            .then((response) => response.json())
-            .then((lista) => {
-                lista.forEach(lista => {
-                    const row = document.createElement("tr");
-                    row.innerHTML += `
-                        <td>${lista.id}</td>
-                        <td>${lista.marca}</td>
-                        <td>${lista.modelo}</td>
-                        <td>${lista.version}</td>
-                    `;
-                    tabla.appendChild(row);
+//             .then((response) => response.json())
+//             .then((lista) => {
+//                 lista.forEach(lista => {
+//                     const row = document.createElement("tr");
+//                     row.innerHTML += `
+//                         <td>${lista.id}</td>
+//                         <td>${lista.marca}</td>
+//                         <td>${lista.modelo}</td>
+//                         <td>${lista.version}</td>
+//                     `;
+//                     tabla.appendChild(row);
                     
-                });
+//                 });
                 
-            })
-            .catch(error => console.log('Hubo un error :' + error.message))
-    };
+//             })
+//             .catch(error => console.log('Hubo un error :' + error.message))
+//     };
     
-    listaAutos();
+//     listaAutos();
 
 
+const listUsers = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const users = await response.json ();
 
+
+    let tableBody = ``;
+    users.forEach((user, index) => {
+        tableBody +=`<tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.username}</td>
+        <td>${user.email}</td>
+        <td>${user.website}</td>
+        </tr>
+        
+        `
+});
+    document.getElementById("tableBody_Users").innerHTML = tableBody;
+
+};
+
+window.addEventListener("load", function () {
+    listUsers();
+});
 
