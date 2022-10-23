@@ -347,7 +347,7 @@ const listUsers = async () => {
         <td>${user.name}</td>
         <td>${user.username}</td>
         <td>${user.email}</td>
-        <td>${user.website}</td>
+        
         </tr>
         
         `
